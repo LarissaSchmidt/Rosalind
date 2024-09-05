@@ -140,4 +140,23 @@ Se inserirmos as mesmas informações de string e valores do código anterior, c
 
 > **INI4	Conditions and Loops: Given: Two positive integers a and b (a<b<10000). Return: The sum of all odd integers from a through b, inclusively.**
 
+Este problema nos pede para somar todos os inteiros ímpares em um intervalo entre ```[a, b]```, onde a e b são inteiros positivos e a<b<10000. Para isso precisamos 
+Ler os valores de a e b 
+Iterar sobre o intervalo [a, b]
+Verificar se o número é ímpar
+Somar os números ímpares
 
+Assim como no exercício anterior utilizamos a função ```def``` para definir um bloco de código, teremos aqui que:
+
+```ruby
+def soma_impares(a, b):
+    if a % 2 == 0:
+        a += 1
+    if b % 2 == 0:
+        b -= 1
+    if a > b:
+        return 0
+    num_termos = (b - a) // 2 + 1
+    soma = num_termos * (a + b) // 2
+    return soma
+```
