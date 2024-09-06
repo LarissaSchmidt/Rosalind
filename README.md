@@ -81,8 +81,6 @@ print(text[a:b+1], text[c:d+1])
 ```
 *Resultado*  ```Humpty Dumpty```
 
-Explicação:
-
 Em ```
 a = 22 
 b = 27 
@@ -141,9 +139,8 @@ Se inserirmos as mesmas informações de string e valores do código anterior, c
 > **INI4	Conditions and Loops: Given: Two positive integers a and b (a<b<10000). Return: The sum of all odd integers from a through b, inclusively.**
 
 Este problema nos pede para somar todos os inteiros ímpares em um intervalo entre ```[a, b]```, onde a e b são inteiros positivos e a<b<10000. Para isso precisamos 
-Ler os valores de a e b 
+
 Iterar sobre o intervalo [a, b]
-Verificar se o número é ímpar
 Somar os números ímpares
 
 Assim como no exercício anterior utilizamos a função ```def``` para definir um bloco de código, teremos aqui que:
@@ -160,3 +157,8 @@ def soma_impares(a, b):
     soma = num_termos * (a + b) // 2
     return soma
 ```
+As funções matemáticas que estamos utilizando são operadores de módulo ```%```, eles nos retornam o resto da divisão por 2. Sabemos que se o resto for igual a 0, temos um número par; se o resto for diferente, temos um número ímpar. Quando fazemos ```a += 1``` ou ```b -= 1```: estamos somando ao valor de ```a``` +1 (tornando-o ímpar) e ao valor de ```b``` -1 (também tornando-o ímpar).
+
+
+
+
