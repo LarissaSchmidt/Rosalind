@@ -140,9 +140,6 @@ Se inserirmos as mesmas informações de string e valores do código anterior, c
 
 Este problema nos pede para somar todos os inteiros ímpares em um intervalo entre ```[a, b]```, onde a e b são inteiros positivos e a<b<10000. Para isso precisamos 
 
-Iterar sobre o intervalo [a, b]
-Somar os números ímpares
-
 Assim como no exercício anterior utilizamos a função ```def``` para definir um bloco de código, teremos aqui que:
 
 ```ruby
@@ -156,8 +153,60 @@ def soma_impares(a, b):
     num_termos = (b - a) // 2 + 1
     soma = num_termos * (a + b) // 2
     return soma
+
+print('Vamos descobrir a soma de todos os números inteiros em um intervalo onde a<b<10000!')
+a = int(input("Digite o valor de a: "))
+b = int(input("Digite o valor de b: "))
+if a < b and b < 10000:
+    resultado = soma_impares(a, b)
+    print(f"A soma de todos os inteiros ímpares de {a} a {b} é: {resultado}")
+elif: a == b
+    print("Esses números são iguais!")
+else:
+    print("Valores inválidos. Certifique-se de que a < b < 10000.")
 ```
 As funções matemáticas que estamos utilizando são operadores de módulo ```%```, eles nos retornam o resto da divisão por 2. Sabemos que se o resto for igual a 0, temos um número par; se o resto for diferente, temos um número ímpar. Quando fazemos ```a += 1``` ou ```b -= 1```: estamos somando ao valor de ```a``` +1 (tornando-o ímpar) e ao valor de ```b``` -1 (também tornando-o ímpar).
+
+Para esse código estamos utilizando conceitos matemáticos que servem de base para o cálculo que queremos. Essa forma de fazer e buscar a soma dos números ímpares, pode ser procurada em um site de busca como o Google, que irá nos auxiliar na montagem do códigos e assim podemos definir as fuções ```num_termos``` e ```soma```.
+
+Pedimos novamente um ```input``` do usuário para saber os valores e então passamos para uma nova função que aparece em nosso código, a utilização do ```if```, ```elif``` e ```else```.
+Essas funções são utilizadas para expressar condicionais dentro do código, basicamente o código diz "se tal coisa: faça isso", "se tal outra: faça isso", "se não for nada disso: faça isso". 
+
+Ex.if: Quando rodamos o código com uma condição que satisfaz ```if```: valor de ```a``` = 10 e ```b``` = 500 
+
+*Resultado* ```A soma de todos os inteiros ímpares de 10 a 500 é: 62475```
+
+Ex.elif: Quando rodamos o código com uma condição que satisfaz ```elif```: valor de ```a``` = 10 e ```b``` = 10 
+
+*Resultado* ```Esses números são iguais!```
+
+Ex.else: Quando rodamos o código com uma condição que satisfaz ```else```: valor de ```a``` = 500 e ```b``` = 10
+
+*Resultado* ```Valores inválidos. Certifique-se de que a < b < 10000```
+
+Mas você pode estar pensando: "Eu realmente preciso dessa matemática toda para fazer meu código funcionar?" e a resposta é não! O Python conta com funções integradas que permitem o nosso código ficar mais conciso. Uma outra forma de fazer o mesmo que acabamos de fazer é:
+
+```ruby
+print('Vamos descobrir a soma de todos os números inteiros em um intervalo onde a<b<10000!')
+a = int(input("Digite o valor de a: "))
+b = int(input("Digite o valor de b: "))
+
+if a < b and b < 10000:
+    print(sum(range(a|1, b+1, 2)))
+elif a == b:
+    print("Esses números são iguais!")
+else:
+    print("Valores inválidos. Certifique-se de que a < b < 10000.")
+```
+
+Aqui estamos utilizando uma função ```a|1``` que ira utilizar um operador 'bitwise' para ajustar o valor de a a ser o próximo número ímpar; a função ```range``` gera uma sequência de números ímpares com o valor de ```a``` (já ajustado), até b (incluindo o b: +1), com um 'passo' de 2; a função ```sum``` então soma essa determinada sequência de números e assim temos: ```sum(range(a|1, b+1, 2))``` como nossa equação matemática. 
+
+Ao rodarmos esse código obtemos os mesmos resultados que o código anterior, mesmo eles possu
+
+
+
+
+
 
 
 
